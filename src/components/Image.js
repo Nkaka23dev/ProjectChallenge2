@@ -16,8 +16,8 @@ class Image extends Component {
         })
     }
     handleSubmit=e=>{ 
-     const id=this.state.albumId
      e.preventDefault()
+     const id=this.state.albumId
      const url=`https://jsonplaceholder.typicode.com/albums/${id}/photos`
      axios.get(url)
      .then(response=>{
@@ -44,7 +44,7 @@ class Image extends Component {
                      <div className="album-search">
                 <h2 className="title">Album Photos</h2> 
                 <form onSubmit={this.handleSubmit} className="search-box">
-                    <input type="text" className="search-control" placeholder="Enter Album ID to get photos..."
+                    <input type="text" className="search-control" placeholder="Enter Album ID.."
                      name="albumId"
                     onChange={this.inputHandler} value={albumId}/> 
                     <button className="search-btn btn" type="submit">Get Album Photos by ID
