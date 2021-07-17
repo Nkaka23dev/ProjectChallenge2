@@ -18,10 +18,10 @@ class Image extends Component {
     handleSubmit=e=>{ 
      e.preventDefault()
      const id=this.state.albumId
-     const url=`https://jsonplaceholder.typicode.com/albums/${id}/photos`
+     const url=`https://albumphotosapi.herokuapp.com/album_photos_by_id/${id}`
      axios.get(url)
      .then(response=>{
-        // console.log(response.data)
+        console.log(response.data)
         if(response.data.length===0){
             alert(`No album photos for ${id} ID`)
        }
